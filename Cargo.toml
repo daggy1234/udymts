@@ -1,0 +1,22 @@
+[package]
+name = "udymts"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+structopt = "0.3.13"
+clap="2.33.3"
+anyhow="1.0.40"
+self_update = { version = "0.27.0", features=["rustls", "archive-zip", "archive-tar", "compression-flate2" ,"compression-zip-deflate"], default-features=false }
+
+[dependencies.pyo3]
+version = "0.14.2"
+features = ["auto-initialize"]
+
+[features]
+auto_updates = []
+
+[profile.release]
+panic = "abort"
